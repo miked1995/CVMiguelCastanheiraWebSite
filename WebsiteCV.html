@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Meu CV</title>
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Isso ajuda a centralizar verticalmente também */
+            margin: 0;
+        }
+
+        img {
+            width: 650px; /* Largura desejada */
+            height: auto; /* Isso manterá a proporção original da imagem */
+        }
+        button {
+            margin-top: 10px; /* Adicionar espaço entre a imagem e o botão */
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>
+        Miguel Castanheira CV
+    </h1>
+    <img src="mc_cv2024.png" alt="CV Image"width="600" height="850"/>
+    <a href="Miguel Castanheira CV 2024 EN.pdf" download>
+        <button>Clique aqui</button>
+    </a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        // Simular um clique no botão assim que a página for carregada
+        document.addEventListener("DOMContentLoaded", function() {
+            var downloadButton = document.getElementById('downloadButton');
+            downloadButton.click();
+        });
+        // Adicionar um evento de clique ao botão para realizar o download
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            var downloadLink = document.createElement('a');
+            downloadLink.href = 'seu_cv.pdf'; // Substituir pelo caminho do seu arquivo PDF
+            downloadLink.download = 'seu_cv.pdf'; // Substituir pelo nome desejado para o arquivo
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        });
+    </script>
+</div>
+</body>
+</html>
